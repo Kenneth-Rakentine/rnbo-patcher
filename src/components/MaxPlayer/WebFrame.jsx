@@ -50,7 +50,7 @@ class WebFrame extends Component {
             onChange={this.handleInputChange}
           />
           <img src="https://i.ibb.co/Sc2Jhqb/icons8-save-50.png" className='saveIcon' alt='saveIcon img'></img>
-          <button onClick={this.handleSave}>Save</button>
+          <button className="saveBtn" onClick={this.handleSave}>Save</button>
           
         </form>
       
