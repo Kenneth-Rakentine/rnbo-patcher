@@ -136,6 +136,7 @@ the AudioContext will do the same to the audio output
 
 **_Built With:_**
 ```
+<
 -Rnbo.js
 -Max Msp  
 -Javascript
@@ -146,14 +147,14 @@ the AudioContext will do the same to the audio output
 -Node.js
 -MongoDB
 -Mongoose
-
-
-
+/>
 ```
 #### Credits:
-- Ideogram: image generation for logo
-- Draw.io: Diagram
+- [Ideogram AI](https://ideogram.ai/): image generation for logo
+- [Draw.io](https://app.diagrams.net/): Diagram
 - [Cycling '74](https://rnbo.cycling74.com/learn/welcome-to-rnbo)
+- [Icons8](https://icons8.com/): Icon PNGs
+- [Cycling '74 Github](https://github.com/Cycling74/rnbo.example.webpage): Rnbo Example Webpage Template for JS
 
 #### Future Enhancements:
 

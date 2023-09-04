@@ -205,3 +205,17 @@ iframe{
 .saveIcon{
   width:9%;
 }
+
+.collectionImg{
+  width:3%;
+  /* height:1%; */
+  height:26px;
+  margin-top:-5px;
+}
+
+.patchImg{
+  width:4%;
+  /* height:1%; */
+  height:28px;
+  margin-top:-5px;
+}

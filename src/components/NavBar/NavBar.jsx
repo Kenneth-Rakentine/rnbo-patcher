@@ -13,9 +13,11 @@ function handleLogOut(){
 
   return (
     <nav>
-      <LogoImg/>  
+      <LogoImg/> 
+      <img src="https://i.ibb.co/VmbwdDX/icons8-collection-50.png" className="collectionImg" alt="collection icon img"></img>
       <Link to="/orders">Collections</Link>
       &nbsp; | &nbsp;
+      <img src="https://i.ibb.co/5K9QRzX/icons8-audio-cable-100.png" className="patchImg" alt="patch icon img"></img>
       <Link to="/orders/new">Patch</Link>
       &nbsp; | &nbsp;
       &nbsp;&nbsp;<span> {user.name}</span>
