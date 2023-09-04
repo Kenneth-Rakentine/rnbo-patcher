@@ -155,6 +155,7 @@ the AudioContext will do the same to the audio output
 - [Trello](https://trello.com/): Workspace Board
 - [Cycling '74](https://rnbo.cycling74.com/learn/welcome-to-rnbo)
 - [Icons8](https://icons8.com/): Icon PNGs
+- [Realtime Colors](https://realtimecolors.com/): Visualizing & Choosing Color Palette for All Design Elements
 - [Cycling '74 Github](https://github.com/Cycling74/rnbo.example.webpage): Rnbo Example Webpage Template for JS
 
 *special thanks*: *jenna c. (for her wisdom and guidance)*
