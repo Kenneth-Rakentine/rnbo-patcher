@@ -152,6 +152,7 @@ the AudioContext will do the same to the audio output
 #### Credits:
 - [Ideogram AI](https://ideogram.ai/): image generation for logo
 - [Draw.io](https://app.diagrams.net/): Diagram
+- [Trello](https://trello.com/): Workspace Board
 - [Cycling '74](https://rnbo.cycling74.com/learn/welcome-to-rnbo)
 - [Icons8](https://icons8.com/): Icon PNGs
 - [Cycling '74 Github](https://github.com/Cycling74/rnbo.example.webpage): Rnbo Example Webpage Template for JS
