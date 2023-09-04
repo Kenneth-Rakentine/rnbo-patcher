@@ -3,14 +3,30 @@
 **a web based patch management system for max msp rnbo projects**
 
 
-![Logo](https://i.ibb.co/26rKb9r/rnbo-patcher-2.jpg)
+![Logo](https://i.ibb.co/wNhBf16/ideogram-8.jpg)
 
 
 ## Diagram
-![Draw.io](https://i.ibb.co/gyxWM3Q/Untitled-Diagram-drawio.png)
+![Draw.io](https://i.ibb.co/gdLDPjy/Rnbo-Patcher-DRAWIO-Diagram.png)
 
+---
 # Concept
+To solve the problem of integrating Javascript Exported RNBO(for Max Msp) to REACT, this web application allows a user to externally import their javascript rnbo project to their browser, save the state of the imported patch to a collection, and edit/delete/re-open the saved patches for further exploration afterward
 
+---
+### Instructions
+
+- Sign up/Log in as a new user
+- Enter the Url of your hosted Rnbo Patcher/Project
+- Click "Save" button to store imported url, patch state into a new "Collection"
+- Add a patch collection title
+- Edit button edits the patch
+- Delete button deletes the patch 
+- *Example rnbo patch urls you can enter to test the functionality:*
+1. [RNBO Granular Web Synth](https://sllewmas.github.io/rnbo/) - **Credit:**[Sam Wells](https://sllewm.as/)
+2. [Multi-Touch Granular Sampler](http://zya.github.io/granular/) **Credit:**[ZYA](https://github.com/zya/granular)
+3. [RNBO Web Granulator](https://codesandbox.io/embed/rec-3-ui-fhczyi?fontsize=14&hidenavigation=1&theme=dark) **Credit:**[Sarunas Kilius](https://projekter.aau.dk/projekter/files/535868106/Master_Thesis__1_.pdf)
+---
 
 
 ### Screenshots
@@ -21,11 +37,7 @@
 
 ![screenshot 2 Placeholder]()
 
-### Instructions
-
 ---
-
-
 
 
 ###### Note:
@@ -140,13 +152,10 @@ the AudioContext will do the same to the audio output
 - [React Community Slider:](https://www.npmjs.com/package/@react-native-community/slider)
 - [React red Slider:](https://www.npmjs.com/package/react-slider)
 
-
+---
 ### Tech/Framework
 
----
-
 **_Built With:_**
-
 ```
 -RNBO [Max-Msp]
 -Javascript
@@ -157,13 +166,15 @@ the AudioContext will do the same to the audio output
 
 ```
 #### Credits:
-- Stable Diffusion: image generation for logo
+- Ideogram: image generation for logo
 - Draw.io: Diagram
+- [Cycling '74](https://rnbo.cycling74.com/learn/welcome-to-rnbo)
 
 #### Future Enhancements:
 
+- [ ] Replace iframe with bette r external import functionality/actual react Rnbo integration
 - [ ] Sample Import - drag and drop
-- [x] Scrubber start position lfo 
+- [ ] Scrubber start position lfo 
 - [ ] Share project feature
 
 
