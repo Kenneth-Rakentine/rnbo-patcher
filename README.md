@@ -60,32 +60,18 @@ DUE: september 7th
 
 ---
 
-*Create a web/browser version of a max msp granular sampler with drag-and-drop sample audio import function where a logged-in user can begin a new "Project", where the sampler object exists, manipulate the imported audio of their choice with the sampler tool using the given gui parameters provided between js/REACT and max msp via RNBO library, and save the project 'state' or project settings (imported samples, etc) and potentially share with other users and even externally*
+*Create a patch librarian/management sysntem and audio production enviornment for Rnbo (for max-msp) users in the browser 
 
-*the goal is to give the user a particle-based audio manipulation tool where they can morph samples into fragments of audio and smear the result into a textured 'cloud' without the need to download and install a vst plugin or standalone application to their pc/device*
+*the goal is to give the user a tool in which they can import their pacthes to their own library of patch collections, work on the patch within the web environment to manipulate and create audio, and save, edit, & curate their progress*
 
-PARAMS: 
-- LFO for scrub playback start position, 
-- window shape/env, 
-- scatter/spread, 
-- grain size, 
-- pitch(?), 
-- grain density/amount/num, 
-- pan/width, 
-- playback speed, 
-- grain rate(?)
-- play button/mute-stop button
-- sample import/drop box (in waveform display window? also list of imported?)
 
 CRUD:
-- Create new project including imported sample(s) & settings
-- Read sample(?)
-- Edit project (main process)
-- Delete project
+- Create new patch including imported rnbo js url & title
+- Read patch saved to colection
+- Edit patch & patch title
+- Delete patchproject
 
- `USER SIGN IN & SHARE PROJECT(?)
 
--
 
 <br>
 
@@ -157,11 +143,17 @@ the AudioContext will do the same to the audio output
 
 **_Built With:_**
 ```
--RNBO [Max-Msp]
+-Rnbo.js
+-Max Msp  
 -Javascript
 -CSS
 -HTML5
 -REACT
+-Express 
+-Node.js
+-MongoDB
+-Mongoose
+
 
 
 ```
@@ -172,16 +164,29 @@ the AudioContext will do the same to the audio output
 
 #### Future Enhancements:
 
-- [ ] Replace iframe with bette r external import functionality/actual react Rnbo integration
+- [ ] Replace iframe with better external import functionality/actual react Rnbo integration
 - [ ] Sample Import - drag and drop
 - [ ] Scrubber start position lfo 
 - [ ] Share project feature
 
-
 ---
 
-###### Unsolved/To Be Accomplished
+###### Unsolved/To Be Accomplished:
 
+- [ ] Create more unqiue working Rnbo Patches to be expoted and saved to the patch catalogue. The main project idea being a granular sampler including the following PARAMS: 
+ - LFO for scrub playback start position, 
+ - window shape/env, 
+ - scatter/spread, 
+ - grain size, 
+ - pitch(?), 
+ - grain density/amount/num, 
+ - pan/width, 
+ - playback speed, 
+- grain rate(?)
+ - play button/mute-stop button
+ - sample import/drop box (in waveform display window? also list of imported?)
+
+---
 ## Assigment Requirements/Instructions:
 Minimum Requirements:
 
