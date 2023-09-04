@@ -21,10 +21,10 @@ function App() {
         <>
           <NavBar user={user} setUser={setUser} /> {/* Fixed setUser */}
           <Routes>
-            <Route path="/orders/new" element={<SearchPage userId={user._id} />} />
-            <Route path="/orders" element={<OrderHistoryPage />} />
+            <Route path="/patches/new" element={<SearchPage userId={user._id} />} />
+            <Route path="/patches" element={<OrderHistoryPage />} />
             {/* redirect to /orders/new if path in address bar hasn't matched a <Route> above */}
-            <Route path="/*" element={<Navigate to="/orders/new" />} />
+            <Route path="/*" element={<Navigate to="/patches/new" />} />
           </Routes>
         </>
       ) : (

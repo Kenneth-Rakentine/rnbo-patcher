@@ -23,9 +23,9 @@ To solve the problem of integrating Javascript Exported RNBO(for Max Msp) to REA
 - Edit button edits the patch
 - Delete button deletes the patch 
 ***Example rnbo patch urls you can enter to test the functionality:***
-1. [RNBO Granular Web Synth](https://sllewmas.github.io/rnbo/) - **Credit:**[Sam Wells](https://sllewm.as/)
-2. [Multi-Touch Granular Sampler](http://zya.github.io/granular/) **Credit:**[ZYA](https://github.com/zya/granular)
-3. [RNBO Web Granulator](https://codesandbox.io/embed/rec-3-ui-fhczyi?fontsize=14&hidenavigation=1&theme=dark) **Credit:**[Sarunas Kilius](https://projekter.aau.dk/projekter/files/535868106/Master_Thesis__1_.pdf)
+1. [RNBO Granular Web Synth](https://sllewmas.github.io/rnbo/) - **Credit:** [Sam Wells](https://sllewm.as/)
+2. [Multi-Touch Granular Sampler](http://zya.github.io/granular/) **Credit:** [ZYA](https://github.com/zya/granular)
+3. [RNBO Web Granulator](https://codesandbox.io/embed/rec-3-ui-fhczyi?fontsize=14&hidenavigation=1&theme=dark) **Credit:** [Sarunas Kilius](https://projekter.aau.dk/projekter/files/535868106/Master_Thesis__1_.pdf)
 ---
 
 
@@ -156,6 +156,9 @@ the AudioContext will do the same to the audio output
 - [Icons8](https://icons8.com/): Icon PNGs
 - [Cycling '74 Github](https://github.com/Cycling74/rnbo.example.webpage): Rnbo Example Webpage Template for JS
 
+*special thanks*: *jenna c. (for her wisdom and guidance)*
+
+---
 #### Future Enhancements:
 
 - [ ] Replace iframe with better external import functionality/actual react Rnbo integration
