@@ -5,8 +5,7 @@ const path = require('path');
 const favicon = require('serve-favicon');
 const logger = require('morgan');
 const mongoose = require('mongoose'); 
-const Website = require('./models/websiteSchema');
-
+const collectionsRouter = require('./routes/api/collections');
 
 const app = express();
 
@@ -28,6 +27,7 @@ const ensureLoggedIn = require('./config/ensureLoggedIn');
 app.use('/api/items', ensureLoggedIn, require('./routes/api/items'));
 app.use('/api/orders', ensureLoggedIn, require('./routes/api/orders'));
 
+//patches ROUTE
 app.post('/api/users/:userId/websites', async (req, res) => {
   const { userId } = req.params;
   console.log('User ID:', userId);
@@ -45,14 +45,11 @@ app.post('/api/users/:userId/websites', async (req, res) => {
       return res.status(404).json({ success: false, message: 'User not found' });
     }
 
-
     const Website = mongoose.model('Website'); 
     const website = new Website({ userId: user._id, url });
-    
-   
+
     user.websites.push(website);
 
-    
     await user.save();
     await website.save();
 
@@ -63,6 +60,9 @@ app.post('/api/users/:userId/websites', async (req, res) => {
     res.status(500).json({ success: false, message: 'Error saving website state' });
   }
 });
+
+//collcetions route
+app.use('/api/collections', collectionsRouter);
 
 // The following "catch all" route (note the *) is necessary
 // to return the index.html on all non-AJAX requests

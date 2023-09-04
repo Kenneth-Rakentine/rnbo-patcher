@@ -41,7 +41,7 @@ class WebFrame extends Component {
   render() {
     return (
       <div>
-        <h1>Rnbo Patcher</h1>
+        <h1 className='patcherHeadTxt'>Rnbo Patcher</h1>
         <form onSubmit={this.handleSubmit}>
           <input
             type="text"

@@ -1,9 +1,9 @@
 :root {
-  --white: #FFFFFF;
+  --white: #ac6a6a;
   --tan-1: #92817A;
   --tan-2: #8D775F;
   --tan-3: #A71D31;
-  --tan-4: #F1F0CC;
+  --tan-4: #c2bfbfd3;
   --orange: #8D775F;
   --text-light: #F1F0CC;
   --text-dark: #2e0914;
@@ -23,10 +23,16 @@ body {
   background-color: var(--tan-4);
   padding: 2vmin;
   height: 100vh;
+  background: 
+  linear-gradient(20deg, #c2bfbfd3, transparent), 
+  url(https://grainy-gradients.vercel.app/noise.svg); 
+  height:100%;
+
 }
 
 .App{
   text-align:center;
+  
 }
 
 code {
@@ -79,6 +85,7 @@ code {
   padding: .6vmin;
   text-align: center;
   font-size: 2vmin;
+  /* margin-left:5%; */
 }
 
 .form-container {
@@ -87,7 +94,7 @@ code {
   border: none;
   border-radius: 1vmin;
   width:50%;
-
+/* margin-left:5%; */
 }
 
 p.error-message {
@@ -96,17 +103,21 @@ p.error-message {
 }
 
 form {
+  /* display:flex;
+  justify-content:center; */
   display: grid;
   grid-template-columns: 1fr 3fr;
   gap: 1.25vmin;
   color: var(--text-light);
   width:80%;
+  margin-left:2%;
 }
 
 label {
   font-size: 5vmin;
   display: flex;
   align-items: center;
+  
 }
 
 input {
@@ -159,3 +170,33 @@ button[type="submit"] {
 .loadBtn{
   width:50px;
 }
+
+nav{
+  display:flex;
+  margin-left:3.5%;
+  /* width:100vh; */
+}
+
+.rnboLogo{
+  align-self:start;
+  width:5%;
+}
+.patcherHeadTxt{
+  margin-left:2%;
+}
+
+iframe{
+  margin-top:5px;
+  /* margin-left:5%; */
+  width:98%;
+  margin-left:1%;
+  /* margin-right:8%; */
+  border:none;
+  box-shadow: inset -2px 4px 2px 1px rgba(194, 189, 189, 0.589);
+  scroll-behavior: var(--tan-3);
+  /* scrollbar-width: .2px; */
+}
+
+/* ::-webkit-scrollbar{
+  display: none;
+} */
