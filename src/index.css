@@ -122,7 +122,7 @@ label {
 
 input {
   padding: 1vmin;
-  font-size: 2vmin;
+  font-size: 4vmin;
   border: none;
   border-radius: .5vmin;
   color: var(--text-dark); 
@@ -203,5 +203,5 @@ iframe{
 } */
 
 .saveIcon{
-  width:5.4%;
+  width:9%;
 }

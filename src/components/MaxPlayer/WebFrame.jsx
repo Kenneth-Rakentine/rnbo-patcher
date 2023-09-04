@@ -45,7 +45,7 @@ class WebFrame extends Component {
         <form onSubmit={this.handleSubmit}>
           <input
             type="text"
-            placeholder="Enter URL"
+            placeholder="Enter MaxPatch URL"
             value={this.state.url}
             onChange={this.handleInputChange}
           />

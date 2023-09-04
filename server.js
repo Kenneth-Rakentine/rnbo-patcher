@@ -7,6 +7,7 @@ const logger = require('morgan');
 const mongoose = require('mongoose'); 
 const collectionsRouter = require('./routes/api/collections');
 const User = require('./models/User')
+const Website = require('./models/websiteSchema');
 
 const app = express();
 
@@ -46,10 +47,9 @@ app.post('/api/users/:userId/websites', async (req, res) => {
       return res.status(404).json({ success: false, message: 'User not found' });
     }
 
-    const Website = mongoose.model('Website'); 
     const website = new Website({ userId: user._id, url });
 
-    user.websites.push(website);
+    // user.websites.push(website);
 
     await user.save();
     await website.save();
