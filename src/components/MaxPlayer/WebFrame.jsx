@@ -49,8 +49,9 @@ class WebFrame extends Component {
             value={this.state.url}
             onChange={this.handleInputChange}
           />
-          <button className='loadBtn' type="submit">Load</button>
+          <img src="https://i.ibb.co/Sc2Jhqb/icons8-save-50.png" className='saveIcon' alt='saveIcon img'></img>
           <button onClick={this.handleSave}>Save</button>
+          
         </form>
       
         <iframe

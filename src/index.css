@@ -179,7 +179,8 @@ nav{
 
 .rnboLogo{
   align-self:start;
-  width:5%;
+  width:8%;
+  border-radius:5px;
 }
 .patcherHeadTxt{
   margin-left:2%;
@@ -200,3 +201,7 @@ iframe{
 /* ::-webkit-scrollbar{
   display: none;
 } */
+
+.saveIcon{
+  width:5.4%;
+}

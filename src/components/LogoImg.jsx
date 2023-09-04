@@ -2,7 +2,7 @@ import React from 'react'
 
 function LogoImg() {
   return (
-    <div> <img src="https://i.ibb.co/McPJkrh/ideogram-3.jpg"  className='rnboLogo' alt='rnbo logo img'></img> </div>
+    <div> <img src="https://ideogram.ai/api/images/direct/ibv1soO-QsiDG339-qLn_w"  className='rnboLogo' alt='rnbo logo img'></img> </div>
   )
 }
 

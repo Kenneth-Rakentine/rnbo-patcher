@@ -6,6 +6,7 @@ const favicon = require('serve-favicon');
 const logger = require('morgan');
 const mongoose = require('mongoose'); 
 const collectionsRouter = require('./routes/api/collections');
+const User = require('./models/User')
 
 const app = express();
 
