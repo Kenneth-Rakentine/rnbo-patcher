@@ -33,20 +33,13 @@ To solve the problem of integrating Javascript Exported RNBO(for Max Msp) to REA
 
 ---
 
-![Figma design skeleton](https://i.ibb.co/j3KXz2K/figma-grainform-wireframe-start-8-29-23.png)
+![Figma design placeholder]()
 
 ![screenshot 2 Placeholder]()
 
----
-
-
-###### Note:
-
-
-
-### Assignment
 
 ---
+### Assignment:
 
 Per Scholas MOD 3 Final Project
 
