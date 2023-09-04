@@ -3,7 +3,7 @@
 **a web based patch management system for max msp rnbo projects**
 
 
-![Logo](https://i.ibb.co/WytbkvR/Grains-Logo-1.png)
+![Logo](https://i.ibb.co/26rKb9r/rnbo-patcher-2.jpg)
 
 
 ## Diagram
