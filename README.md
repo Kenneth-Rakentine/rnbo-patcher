@@ -35,7 +35,7 @@ To solve the problem of integrating Javascript Exported RNBO(for Max Msp) to REA
 
 ![Figma design placeholder]()
 
-![screenshot 2 Placeholder]()
+![Early Screenshot](https://i.ibb.co/YbYkMXb/rnbo-patcher-screenshot-1.png)
 
 
 ---
