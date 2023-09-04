@@ -210,8 +210,8 @@ One of the following features instead:
 
 ........
 
-TOOLS
-
+---
+## TOOLS
 
 **Wireframe/Comment the design and structure of the app first, then start the code**
 
@@ -235,7 +235,7 @@ socket.io
 
 to supplement: look up "mongoose hooks"
 
-
+---
 ### Mod 3: A MERN Stack Application & TribleByte:
 
 ~~~~~~~~~
