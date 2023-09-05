@@ -4,9 +4,10 @@ const express = require('express');
 const path = require('path');
 const favicon = require('serve-favicon');
 const logger = require('morgan');
-const mongoose = require('mongoose'); 
-const User = require('./models/User')
+const mongoose = require('mongoose');
+const User = require('./models/User');
 const Website = require('./models/websiteSchema');
+const Collection = require('./models/collection');
 
 const app = express();
 
@@ -40,19 +41,24 @@ app.post('/api/users/:userId/websites', async (req, res) => {
 
   try {
     console.log('User ID:', userId);
-    const User = mongoose.model('User'); // 
     const user = await User.findById(userId);
-
-    // console.log('User:', user); 
 
     if (!user) {
       console.log(`User with ID ${userId} not found.`);
       return res.status(404).json({ success: false, message: 'User not found' });
     }
 
-    const website = new Website({ userId: user._id, url, title, collectionName });
+    //find or create the collection with the given name
+    let collection = await Collection.findOne({ name: collectionName, userId: user._id });
 
-    await user.save();
+    if (!collection) {
+      //if the collection doesn't exist, create it
+      collection = new Collection({ name: collectionName, userId: user._id });
+      await collection.save();
+    }
+
+    const website = new Website({ userId: user._id, url, title, collectionId: collection._id });
+
     await website.save();
 
     // Respond with success
@@ -63,11 +69,9 @@ app.post('/api/users/:userId/websites', async (req, res) => {
   }
 });
 
-
-
 // The following "catch all" route (note the *) is necessary
 // to return the index.html on all non-AJAX requests
-app.get('/*', function(req, res) {
+app.get('/*', function (req, res) {
   res.sendFile(path.join(__dirname, 'build', 'index.html'));
 });
 
@@ -75,6 +79,6 @@ app.get('/*', function(req, res) {
 // development to avoid collision with React's dev server
 const port = process.env.PORT || 3001;
 
-app.listen(port, function() {
+app.listen(port, function () {
   console.log(`Express app running on port ${port}`);
 });

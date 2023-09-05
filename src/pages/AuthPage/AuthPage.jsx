@@ -8,7 +8,8 @@ export default function AuthPage({setUser}) {
   return (
     <main className={styles.AuthPage}>
       <div>
-        <h1>Auth Page</h1>
+      
+        <h1 className='authHead'><img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/untested.png" className='authIcon'alt="authIcon"/>Auth Page</h1>
         <button
           onClick={() => {
             setShowLogin(!showLogin);

@@ -18,7 +18,6 @@ class Collections extends Component {
   fetchUserData = async () => {
     try {
       const { userId } = this.props;
-      console.log(userId);
 
       // Fetch collections
       const collectionsResponse = await axios.get(`/api/collections/${userId}`);
@@ -36,7 +35,6 @@ class Collections extends Component {
 
   render() {
     const { collections, patches } = this.state;
-    console.log(this.props);
 
     return (
       <div>
@@ -49,27 +47,20 @@ class Collections extends Component {
             <ul>
               {collections.map((collection) => (
                 <li key={collection._id}>
-                  {/* Render collection information here */}
-                  <p>Patch Collection: {collection.name}</p>
+                  <h3>Collection Name: {collection.name}</h3>
+                  <ul>
+                    {patches
+                      .filter((patch) => patch.collectionId === collection._id)
+                      .map((patch) => (
+                        <li key={patch._id}>
+                          {/* Render patch information here */}
+                          <p>Title: {patch.title}</p>
+                          <p>URL: {patch.url}</p>
+                        </li>
+                      ))}
+                  </ul>
                 </li>
               ))}
-            </ul>
-          )}
-        </div>
-        <div>
-          <h2>Patches</h2>
-          {Array.isArray(patches) && patches.length === 0 ? ( // Check if patches is an array
-            <p>No patches to display.</p>
-          ) : (
-            <ul>
-              {Array.isArray(patches) &&
-                patches.map((patch) => (
-                  <li key={patch._id}>
-                    {/* Render patch information here */}
-                    <p>Title: {patch.title}</p>
-                    <p>URL: {patch.url}</p>
-                  </li>
-                ))}
             </ul>
           )}
         </div>

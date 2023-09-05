@@ -255,3 +255,14 @@ box-shadow: -3px 2px 0px rgb(91, 91, 114); */
   margin-top:-5px;
   margin-right:.6%;
 }
+
+.authIcon{
+  display:column;
+  margin-left:-35%;
+  justify-content:start;
+}
+
+.authHead{
+  display:column;
+
+}
