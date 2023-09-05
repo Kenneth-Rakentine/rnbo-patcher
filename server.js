@@ -24,23 +24,22 @@ app.use(require('./config/checkToken'));
 // Put API routes here, before the "catch all" route
 app.use('/api/users', require('./routes/api/users'));
 
-//collections route
+// Collections route
 app.use('/api/collections', require('./routes/api/collections'));
 
 app.use('/api/websites', require('./routes/api/websites'));
+
 // Protect the API routes below from anonymous users
 const ensureLoggedIn = require('./config/ensureLoggedIn');
 app.use('/api/items', ensureLoggedIn, require('./routes/api/items'));
 app.use('/api/orders', ensureLoggedIn, require('./routes/api/orders'));
 
-//patches ROUTE
+// Patches route
 app.post('/api/users/:userId/websites', async (req, res) => {
   const { userId } = req.params;
-  console.log('User ID:', userId);
   const { url, title, collectionName } = req.body;
 
   try {
-    console.log('User ID:', userId);
     const user = await User.findById(userId);
 
     if (!user) {
@@ -48,11 +47,11 @@ app.post('/api/users/:userId/websites', async (req, res) => {
       return res.status(404).json({ success: false, message: 'User not found' });
     }
 
-    //find or create the collection with the given name
+    // Find or create the collection with the given name
     let collection = await Collection.findOne({ name: collectionName, userId: user._id });
 
     if (!collection) {
-      //if the collection doesn't exist, create it
+      // If the collection doesn't exist, create it
       collection = new Collection({ name: collectionName, userId: user._id });
       await collection.save();
     }

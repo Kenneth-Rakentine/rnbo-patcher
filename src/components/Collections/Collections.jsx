@@ -27,6 +27,9 @@ class Collections extends Component {
       const patchesResponse = await axios.get(`/api/users/${userId}/websites`);
       const patches = patchesResponse.data;
 
+      // Log patchesResponse.data to inspect what data is being received
+      console.log('Patches Response Data:', patchesResponse.data);
+
       this.setState({ collections, patches });
     } catch (error) {
       console.error('Error fetching user data:', error);
@@ -41,9 +44,7 @@ class Collections extends Component {
         <h1>User Patch Collections</h1>
         <div>
           <h2>Collections</h2>
-          {collections.length === 0 ? (
-            <p>No collections to display.</p>
-          ) : (
+          {Array.isArray(patches) && patches.length > 0 ? (
             <ul>
               {collections.map((collection) => (
                 <li key={collection._id}>
@@ -62,6 +63,8 @@ class Collections extends Component {
                 </li>
               ))}
             </ul>
+          ) : (
+            <p>No patches to display.</p>
           )}
         </div>
       </div>

@@ -25,12 +25,12 @@ class WebFrame extends Component {
     event.preventDefault();
     const { userId } = this.props;
     const { url, title, collectionName } = this.state;
-  
+
     try {
-     //check whether collection already exists
+      // Check whether collection already exists
       const collectionResponse = await axios.get(`/api/collections/byName/${collectionName}`);
       let collectionId;
-  
+
       if (collectionResponse.data) {
         collectionId = collectionResponse.data._id;
       } else {
@@ -40,12 +40,12 @@ class WebFrame extends Component {
         });
         collectionId = newCollectionResponse.data._id;
       }
-  
+
       const newWebsite = {
         userId,
         url,
         title,
-        collectionId,
+        collectionName, // Send the collectionName field
       };
 
       await axios.post(`/api/users/${userId}/websites`, newWebsite);
@@ -109,3 +109,4 @@ class WebFrame extends Component {
 }
 
 export default WebFrame;
+
