@@ -25,13 +25,27 @@ class WebFrame extends Component {
     event.preventDefault();
     const { userId } = this.props;
     const { url, title, collectionName } = this.state;
-
+  
     try {
+     //check whether collection already exists
+      const collectionResponse = await axios.get(`/api/collections/byName/${collectionName}`);
+      let collectionId;
+  
+      if (collectionResponse.data) {
+        collectionId = collectionResponse.data._id;
+      } else {
+        const newCollectionResponse = await axios.post('/api/collections', {
+          name: collectionName,
+          userId,
+        });
+        collectionId = newCollectionResponse.data._id;
+      }
+  
       const newWebsite = {
         userId,
         url,
         title,
-        collectionName,
+        collectionId,
       };
 
       await axios.post(`/api/users/${userId}/websites`, newWebsite);
