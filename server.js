@@ -34,6 +34,22 @@ const ensureLoggedIn = require('./config/ensureLoggedIn');
 app.use('/api/items', ensureLoggedIn, require('./routes/api/items'));
 app.use('/api/orders', ensureLoggedIn, require('./routes/api/orders'));
 
+
+// TESTING FOR GET
+app.get('/TESTING/:userId/websites', async (req, res) => {
+  try {
+    const { userId } = req.params; // get id
+    const allPatches = await Website.find({}) 
+    res.setHeader('Content-Type', 'application/json'); 
+    res.status(200).send(allPatches)
+    
+  } catch (error) {
+    console.error(error)
+    res.status(500).send(error)
+  }
+  // res.send('testing')
+})
+
 // Patches route
 app.post('/api/users/:userId/websites', async (req, res) => {
   const { userId } = req.params;

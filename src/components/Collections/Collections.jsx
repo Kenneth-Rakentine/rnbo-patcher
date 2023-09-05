@@ -22,10 +22,13 @@ class Collections extends Component {
       // Fetch collections
       const collectionsResponse = await axios.get(`/api/collections/${userId}`);
       const collections = collectionsResponse.data;
+      console.log('COLLECTIONS',collections) // is an array
 
       // Fetch patches
-      const patchesResponse = await axios.get(`/api/users/${userId}/websites`);
+      const patchesResponse = await axios.get(`/TESTING/${userId}/websites`);  // no path to catch this THIS WAS MAIN ISSUE
       const patches = patchesResponse.data;
+      console.log('PATCHES',patches) // patch response is weird
+
 
       // Log patchesResponse.data to inspect what data is being received
       console.log('Patches Response Data:', patchesResponse.data);
@@ -44,10 +47,13 @@ class Collections extends Component {
         <h1>User Patch Collections</h1>
         <div>
           <h2>Collections</h2>
-          {Array.isArray(patches) && patches.length > 0 ? (
+          {
+          // Array.isArray(patches) && patches.length > 0 ?
+            collections ? 
+            (
             <ul>
               {collections.map((collection) => (
-                <li key={collection._id}>
+                (<li key={collection._id}>
                   <h3>Collection Name: {collection.name}</h3>
                   <ul>
                     {patches
@@ -60,12 +66,19 @@ class Collections extends Component {
                         </li>
                       ))}
                   </ul>
-                </li>
+                </li>)
               ))}
             </ul>
           ) : (
             <p>No patches to display.</p>
           )}
+
+{/* TESTINGGGGGGG */}
+          {/* {
+              collections.map((collection) => {
+                return <p>test</p>
+              })
+          } */}
         </div>
       </div>
     );
