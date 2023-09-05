@@ -126,7 +126,7 @@ input {
   border: none;
   border-radius: .5vmin;
   color: var(--text-dark); 
-  height:5vh;
+  height:4vh;
   margin-bottom:0%;
 }
 
@@ -211,7 +211,24 @@ iframe{
 
 .saveBtn{
   margin-top:0%;
+
+/* display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 16px 18px;
+gap: 10px;
+width: 230px;
+height: 1px;
+background: #FFFFFF;
+border: 2px solid rgb(91, 91, 114);
+box-shadow: -3px 2px 0px rgb(91, 91, 114); */
 }
+
+
+
+
+
 
 .collectionImg{
   width:3%;

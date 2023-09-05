@@ -33,7 +33,7 @@ app.use('/api/orders', ensureLoggedIn, require('./routes/api/orders'));
 app.post('/api/users/:userId/websites', async (req, res) => {
   const { userId } = req.params;
   console.log('User ID:', userId);
-  const { url } = req.body;
+  const { url, title } = req.body;
 
   try {
     console.log('User ID:', userId);
@@ -47,9 +47,7 @@ app.post('/api/users/:userId/websites', async (req, res) => {
       return res.status(404).json({ success: false, message: 'User not found' });
     }
 
-    const website = new Website({ userId: user._id, url });
-
-    // user.websites.push(website);
+    const website = new Website({ userId: user._id, url, title });
 
     await user.save();
     await website.save();

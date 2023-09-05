@@ -158,15 +158,17 @@ the AudioContext will do the same to the audio output
 - [Realtime Colors](https://realtimecolors.com/): Visualizing & Choosing Color Palette for All Design Elements
 - [Cycling '74 Github](https://github.com/Cycling74/rnbo.example.webpage): Rnbo Example Webpage Template for JS
 
-*special thanks*: *jenna c. (for her wisdom and guidance)*
+*special thanks*: *jenna c. (for her troubleshooting wisdom and guidance)*
 
 ---
 #### Future Enhancements:
 
+- [ ]  Audio capture (start/stop) button which saves audio to the local storage buffer with AUDIOCONTEXT and save that audio file to the patch in collections
 - [ ] Replace iframe with better external import functionality/actual react Rnbo integration
 - [ ] Sample Import - drag and drop
 - [ ] Scrubber start position lfo 
 - [ ] Share project feature
+- [ ] Max Granular Sampler tool refactored from js to react from max msp via rnbo
 
 ---
 

@@ -6,6 +6,7 @@ class WebFrame extends Component {
     super();
     this.state = {
       url: '',
+      title: '',
     };
     this.myIframeRef = React.createRef();
   }
@@ -23,12 +24,13 @@ class WebFrame extends Component {
     event.preventDefault();
     const { userId } = this.props;
     console.log('userId:', userId);
-    const { url } = this.state;
+    const { url, title } = this.state;
 
     try {
       const newWebsite = {
         userId, 
         url,
+        title,
       };
 
       await axios.post(`/api/users/${userId}/websites`, newWebsite);
@@ -37,6 +39,11 @@ class WebFrame extends Component {
       console.error('Error saving website state:', error);
     }
   }
+
+  handleTitleChange = (event) => {
+    this.setState({ title: event.target.value });
+  }
+  
 
   render() {
     return (
@@ -49,6 +56,14 @@ class WebFrame extends Component {
             value={this.state.url}
             onChange={this.handleInputChange}
           />
+           &nbsp;&nbsp;
+            <input
+          type="text"
+          placeholder="Enter Title"
+          id="titleInput" 
+          value={this.state.title} 
+          onChange={this.handleTitleChange}
+        />
           <img src="https://i.ibb.co/Sc2Jhqb/icons8-save-50.png" className='saveIcon' alt='saveIcon img'></img>
           <button className="saveBtn" onClick={this.handleSave}>Save</button>
           
