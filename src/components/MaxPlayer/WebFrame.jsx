@@ -24,12 +24,11 @@ class WebFrame extends Component {
   handleSave = async (event) => {
     event.preventDefault();
     const { userId } = this.props;
-    console.log('userId:', userId);
     const { url, title, collectionName } = this.state;
 
     try {
       const newWebsite = {
-        userId, 
+        userId,
         url,
         title,
         collectionName,
@@ -45,7 +44,10 @@ class WebFrame extends Component {
   handleTitleChange = (event) => {
     this.setState({ title: event.target.value });
   }
-  
+
+  handleCollectionNameChange = (event) => {
+    this.setState({ collectionName: event.target.value });
+  }
 
   render() {
     return (
@@ -58,19 +60,28 @@ class WebFrame extends Component {
             value={this.state.url}
             onChange={this.handleInputChange}
           />
-           &nbsp;&nbsp;
-            <input
-          type="text"
-          placeholder="Enter Title"
-          id="titleInput" 
-          value={this.state.title} 
-          onChange={this.handleTitleChange}
-        />
-          <img src="https://i.ibb.co/Sc2Jhqb/icons8-save-50.png" className='saveIcon' alt='saveIcon img'></img>
+          &nbsp;&nbsp;
+          <input
+            type="text"
+            placeholder="Enter Title"
+            id="titleInput"
+            value={this.state.title}
+            onChange={this.handleTitleChange}
+          />
+          &nbsp;&nbsp;
+          <input
+            type="text"
+            placeholder="Enter Collection Name"
+            value={this.state.collectionName}
+            onChange={this.handleCollectionNameChange}
+          />
+          <img
+            src="https://i.ibb.co/Sc2Jhqb/icons8-save-50.png"
+            className='saveIcon'
+            alt='saveIcon img'
+          ></img>
           <button className="saveBtn" onClick={this.handleSave}>Save</button>
-          
         </form>
-      
         <iframe
           ref={this.myIframeRef}
           title="Website Frame"

@@ -1,30 +1,76 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 
 class Collections extends Component {
-  render() {
-    const { items, isCollection } = this.props;
+  constructor() {
+    super();
+    this.state = {
+      collections: [],
+      patches: [],
+    };
+  }
 
-    // Check if items is an array before using map
-    if (!Array.isArray(items)) {
-      return (
-        <div>
-          <h1>{isCollection ? 'Collections' : 'User\'s Patches'}</h1>
-          <p>No items to display.</p>
-        </div>
-      );
+  
+
+  componentDidMount() {
+    this.fetchUserData();
+  }
+
+  //fetch user collections and patches
+  fetchUserData = async () => {
+    try {
+      const { userId } = this.props;
+      console.log(userId)
+      //fetch collections
+      const collectionsResponse = await axios.get(`/api/collections/${userId}`);
+      const collections = collectionsResponse.data;
+      
+      //fetch patches
+      const patchesResponse = await axios.get(`/api/users/${userId}/websites`);
+      const patches = patchesResponse.data;
+
+      this.setState({ collections, patches });
+    } catch (error) {
+      console.error('Error fetching user data:', error);
     }
+  };
 
+  render() {
+    const { collections, patches } = this.state;
+    console.log(this.props)
     return (
       <div>
-        <h1>{isCollection ? 'Collections' : 'User\'s Patches'}</h1>
+        <h1>User Patch Collections</h1>
         <div>
-          {items.map((item) => (
-            <div key={item._id}>
-              {/* Render item information here */}
-              <p>Title: {item.title}</p>
-              <p>URL: {item.url}</p>
-            </div>
-          ))}
+          <h2>Collections</h2>
+          {collections.length === 0 ? (
+            <p>No collections to display.</p>
+          ) : (
+            <ul>
+              {collections.map((collection) => (
+                <li key={collection._id}>
+                  {/* Render collection information here */}
+                  <p>Patch Collection: {collection.name}</p>
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
+        <div>
+          <h2>Patches</h2>
+          {patches.length === 0 ? (
+            <p>No patches to display.</p>
+          ) : (
+            <ul>
+              {patches.map((patch) => (
+                <li key={patch._id}>
+                  {/* Render patch information here */}
+                  <p>Title: {patch.title}</p>
+                  <p>URL: {patch.url}</p>
+                </li>
+              ))}
+            </ul>
+          )}
         </div>
       </div>
     );

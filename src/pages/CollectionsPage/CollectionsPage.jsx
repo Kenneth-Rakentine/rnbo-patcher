@@ -14,7 +14,7 @@ class CollectionsPage extends Component {
     // Fetch collections data from the server based on the userId
     const { userId } = this.props;
 
-    axios.get(`/api/users/${userId}/collections`)
+    axios.get(`/api/collections/${userId}`)
       .then((response) => {
         // Update the state with the fetched collections
         this.setState({ collections: response.data });
@@ -26,11 +26,12 @@ class CollectionsPage extends Component {
 
   render() {
     const { collections } = this.state;
+    const { userId } = this.props;
 
     return (
       <div>
         <h1>Collections Page</h1>
-        <Collections items={collections} isCollection={true} />
+        <Collections items={collections} isCollection={true}  userId={userId}  />
       </div>
     );
   }

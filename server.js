@@ -5,7 +5,6 @@ const path = require('path');
 const favicon = require('serve-favicon');
 const logger = require('morgan');
 const mongoose = require('mongoose'); 
-const collectionsRouter = require('./routes/api/collections');
 const User = require('./models/User')
 const Website = require('./models/websiteSchema');
 
@@ -24,6 +23,10 @@ app.use(require('./config/checkToken'));
 // Put API routes here, before the "catch all" route
 app.use('/api/users', require('./routes/api/users'));
 
+//collections route
+app.use('/api/collections', require('./routes/api/collections'));
+
+app.use('/api/websites', require('./routes/api/websites'));
 // Protect the API routes below from anonymous users
 const ensureLoggedIn = require('./config/ensureLoggedIn');
 app.use('/api/items', ensureLoggedIn, require('./routes/api/items'));
@@ -60,10 +63,7 @@ app.post('/api/users/:userId/websites', async (req, res) => {
   }
 });
 
-//collcetions route
-app.use('/api/collections', collectionsRouter);
 
-app.use('/api/websites', require('./routes/api/websites'));
 
 // The following "catch all" route (note the *) is necessary
 // to return the index.html on all non-AJAX requests
