@@ -10,22 +10,21 @@ class Collections extends Component {
     };
   }
 
-  
-
   componentDidMount() {
     this.fetchUserData();
   }
 
-  //fetch user collections and patches
+  // Fetch user collections and patches
   fetchUserData = async () => {
     try {
       const { userId } = this.props;
-      console.log(userId)
-      //fetch collections
+      console.log(userId);
+
+      // Fetch collections
       const collectionsResponse = await axios.get(`/api/collections/${userId}`);
       const collections = collectionsResponse.data;
-      
-      //fetch patches
+
+      // Fetch patches
       const patchesResponse = await axios.get(`/api/users/${userId}/websites`);
       const patches = patchesResponse.data;
 
@@ -37,7 +36,8 @@ class Collections extends Component {
 
   render() {
     const { collections, patches } = this.state;
-    console.log(this.props)
+    console.log(this.props);
+
     return (
       <div>
         <h1>User Patch Collections</h1>
@@ -58,17 +58,18 @@ class Collections extends Component {
         </div>
         <div>
           <h2>Patches</h2>
-          {patches.length === 0 ? (
+          {Array.isArray(patches) && patches.length === 0 ? ( // Check if patches is an array
             <p>No patches to display.</p>
           ) : (
             <ul>
-              {patches.map((patch) => (
-                <li key={patch._id}>
-                  {/* Render patch information here */}
-                  <p>Title: {patch.title}</p>
-                  <p>URL: {patch.url}</p>
-                </li>
-              ))}
+              {Array.isArray(patches) &&
+                patches.map((patch) => (
+                  <li key={patch._id}>
+                    {/* Render patch information here */}
+                    <p>Title: {patch.title}</p>
+                    <p>URL: {patch.url}</p>
+                  </li>
+                ))}
             </ul>
           )}
         </div>
