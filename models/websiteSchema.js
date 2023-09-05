@@ -6,7 +6,7 @@ const websiteSchema = new Schema({
   // user: { type: Object, required: true },
   title: { type: String, required: true },
   url: { type: String, required: true },
-  //additional fields?
+  collectionId: { type: Schema.Types.ObjectId, ref: 'Collection' },
 }, {
   timestamps: true
 });

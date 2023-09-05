@@ -7,7 +7,7 @@ const collectionSchema = new Schema({
   patches: [
     {
       title: { type: String, required: true }, 
-      iframeState: { type: String, required: true },
+      url: { type: String, required: true }, 
     },
   ],
 });

@@ -116,8 +116,6 @@ the AudioContext will do the same to the audio output
 
 [Grainflow Max Msp App](https://github.com/composingcap/grainflow-basic-granulator-app?fbclid=IwAR3Q4sDQwuSJlqS6YVShAlIeL6GlTZERZ-8FMvEeoAhBtRVngusOznSQPmU)
 
-*TO EXPORT FROM Max Msp RNBO: (must be inside of an open OBJECT which is exportable, and the EXPORT icon will appear on the right side of the newe object Window)*
-
 [RNBO EXPORT TUTORIAL](https://www.youtube.com/watch?v=Q3S3BD1LnCY&ab_channel=MelodyLoveless)
 
 [Another GOOD Export and Js Code Tutorial for RNBO](https://www.youtube.com/watch?v=1HVT1hsuKsA&ab_channel=lttcmd)

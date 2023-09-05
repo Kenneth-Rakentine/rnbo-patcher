@@ -7,6 +7,7 @@ class WebFrame extends Component {
     this.state = {
       url: '',
       title: '',
+      collectionName: 'my_rnbo_patches',
     };
     this.myIframeRef = React.createRef();
   }
@@ -24,13 +25,14 @@ class WebFrame extends Component {
     event.preventDefault();
     const { userId } = this.props;
     console.log('userId:', userId);
-    const { url, title } = this.state;
+    const { url, title, collectionName } = this.state;
 
     try {
       const newWebsite = {
         userId, 
         url,
         title,
+        collectionName,
       };
 
       await axios.post(`/api/users/${userId}/websites`, newWebsite);

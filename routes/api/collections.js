@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const Collection = require('../../models/collection');
 
-//create new collection
+//create new
 router.post('/', async (req, res) => {
   try {
     const { name, userId } = req.body;
@@ -22,12 +22,13 @@ router.post('/', async (req, res) => {
   }
 });
 
-//retrieve user collection 
+//retrieve user collections
 router.get('/:userId', async (req, res) => {
   try {
     const userId = req.params.userId;
 
-    const collections = await Collection.find({ userId });
+    //include patches
+    const collections = await Collection.find({ userId }).populate('patches');
 
     res.status(200).json(collections);
   } catch (error) {
@@ -36,7 +37,7 @@ router.get('/:userId', async (req, res) => {
   }
 });
 
-//update title
+//update collection title
 router.put('/:collectionId', async (req, res) => {
   try {
     const collectionId = req.params.collectionId;
@@ -55,7 +56,7 @@ router.put('/:collectionId', async (req, res) => {
   }
 });
 
-//delete
+//delete collection
 router.delete('/:collectionId', async (req, res) => {
   try {
     const collectionId = req.params.collectionId;

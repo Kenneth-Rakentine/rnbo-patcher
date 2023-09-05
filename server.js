@@ -33,7 +33,7 @@ app.use('/api/orders', ensureLoggedIn, require('./routes/api/orders'));
 app.post('/api/users/:userId/websites', async (req, res) => {
   const { userId } = req.params;
   console.log('User ID:', userId);
-  const { url, title } = req.body;
+  const { url, title, collectionName } = req.body;
 
   try {
     console.log('User ID:', userId);
@@ -47,7 +47,7 @@ app.post('/api/users/:userId/websites', async (req, res) => {
       return res.status(404).json({ success: false, message: 'User not found' });
     }
 
-    const website = new Website({ userId: user._id, url, title });
+    const website = new Website({ userId: user._id, url, title, collectionName });
 
     await user.save();
     await website.save();
@@ -62,6 +62,8 @@ app.post('/api/users/:userId/websites', async (req, res) => {
 
 //collcetions route
 app.use('/api/collections', collectionsRouter);
+
+app.use('/api/websites', require('./routes/api/websites'));
 
 // The following "catch all" route (note the *) is necessary
 // to return the index.html on all non-AJAX requests
