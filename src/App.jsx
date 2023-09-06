@@ -11,6 +11,7 @@ import NavBar from "./components/NavBar/NavBar";
 import styles from './App.module.css';
 import SearchPage from "./pages/SearchPage/SearchPage";
 import EditPatch from "./components/EditPatch/EditPatch";
+import WebFrame from "./components/MaxPlayer/WebFrame";
 
 function App() {
   // array destructuring
@@ -42,11 +43,9 @@ function App() {
     />
   )}
 />
- 
-
-            {/* redirect to /orders/new if path in address bar hasn't matched a <Route> above */}
-
             <Route path="/*" element={<Navigate to="/patches/new" />} />
+            <Route path="/patches/new/:url" element={<WebFrame />} />
+
           </Routes>
         </>
       ) : (

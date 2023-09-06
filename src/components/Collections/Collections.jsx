@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
+
+
 
 class Collections extends Component {
   constructor() {
@@ -39,10 +42,12 @@ class Collections extends Component {
       console.error('Error fetching user data:', error);
     }
   };
+
   handleOpen = (patch) => {
+    //set url of the selected patch in the state
     this.setState({
       openedURL: patch.url,
-       //set default title if none exists
+      //set default title if none exists
       openedTitle: patch.title || 'Untitled',
     });
   };
@@ -80,6 +85,9 @@ class Collections extends Component {
     e.preventDefault();
 
     const { editedPatchTitle, editedPatchURL } = this.state;
+
+    
+
 
     try {
       //send PUT request to update the patch data by id
@@ -137,7 +145,11 @@ class Collections extends Component {
                               <>
                                 <p>Patch: {patch.title}</p>
                                 <p>URL: {patch.url}</p>
-                                <button onClick={this.handleOpen(patch)}>Open</button>
+                                <button>
+          <Link to={`/patches/new/${openedURL}`}>
+            Open
+          </Link>
+        </button>
                                 <button onClick={() => this.handleEditPatch(patch)}>Edit</button>
                                 <button onClick={() => this.handleDeletePatch(patch._id)}>Delete</button>
                               </>

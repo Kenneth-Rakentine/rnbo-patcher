@@ -1,85 +1,76 @@
-import React, { Component } from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import { useParams } from 'react-router-dom'; // Import useParams
+import { useParams, useLocation } from 'react-router-dom';
 
-class EditPatch extends Component {
-  constructor() {
-    super();
-    this.state = {
-      title: '',
-      url: '',
+function EditPatch(props) {
+  const { patchId, collectionId } = useParams(); // Get patchId and collectionId from route params
+  const location = useLocation();
+
+  const [title, setTitle] = useState('');
+  const [url, setUrl] = useState('');
+
+  useEffect(() => {
+    const fetchPatchData = async () => {
+      try {
+        const patchResponse = await axios.get(`/api/websites/${patchId}`);
+        const patch = patchResponse.data;
+
+        setTitle(patch.title);
+        setUrl(patch.url);
+      } catch (error) {
+        console.error('Error fetching patch data:', error);
+      }
     };
-  }
 
-  componentDidMount() {
-    // Fetch the patch data by ID when the component mounts
-    this.fetchPatchData();
-  }
+    fetchPatchData(); // Call fetchPatchData within the useEffect callback
 
-  // Fetch patch data by ID
-  fetchPatchData = async () => {
-    try {
-      const { patchId } = this.props.match.params; // Get patchId from route params
-      const patchResponse = await axios.get(`/api/websites/${patchId}`);
-      const patch = patchResponse.data;
+  }, [patchId]); // Include patchId in the dependency array
 
-      this.setState({
-        title: patch.title,
-        url: patch.url,
-      });
-    } catch (error) {
-      console.error('Error fetching patch data:', error);
+  const handleInputChange = (event) => {
+    if (event.target.name === 'title') {
+      setTitle(event.target.value);
+    } else if (event.target.name === 'url') {
+      setUrl(event.target.value);
     }
   };
 
-  handleInputChange = (event) => {
-    this.setState({ [event.target.name]: event.target.value });
-  }
-
-  handleSave = async () => {
-    const { patchId, collectionId } = this.props.match.params; // Get patchId from route params
-    const { title, url } = this.state;
-
+  const handleSave = async () => {
     try {
       // Send a PUT request to update the patch data by ID
       await axios.put(`/api/websites/${patchId}`, { title, url });
       // Redirect back to the patch view
-      this.props.history.push(`/collections/${collectionId}/patches/${patchId}`);
+      props.history.push(`/collections/${collectionId}/patches/${patchId}`);
     } catch (error) {
       console.error('Error updating patch:', error);
     }
   };
 
-  render() {
-    const { title, url } = this.state;
-
-    return (
-      <div>
-        <h2>Edit Patch</h2>
-        <form>
-          <div>
-            <label>Title:</label>
-            <input
-              type="text"
-              name="title"
-              value={title}
-              onChange={this.handleInputChange}
-            />
-          </div>
-          <div>
-            <label>URL:</label>
-            <input
-              type="text"
-              name="url"
-              value={url}
-              onChange={this.handleInputChange}
-            />
-          </div>
-          <button onClick={this.handleSave}>Save</button>
-        </form>
-      </div>
-    );
-  }
+  return (
+    <div>
+      <h2>Edit Patch</h2>
+      <form>
+        <div>
+          <label>Title:</label>
+          <input
+            type="text"
+            name="title"
+            value={title}
+            onChange={handleInputChange}
+          />
+        </div>
+        <div>
+          <label>URL:</label>
+          <input
+            type="text"
+            name="url"
+            value={url}
+            onChange={handleInputChange}
+          />
+        </div>
+        <button onClick={handleSave}>Save</button>
+      </form>
+    </div>
+  );
 }
 
 export default EditPatch;
