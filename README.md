@@ -29,12 +29,14 @@ To solve the problem of integrating Javascript Exported RNBO(for Max Msp) to REA
 2. [Multi-Touch Granular Sampler](http://zya.github.io/granular/) **Credit:** [ZYA](https://github.com/zya/granular)
 3. [RNBO Web Granulator](https://codesandbox.io/embed/rec-3-ui-fhczyi?fontsize=14&hidenavigation=1&theme=dark) **Credit:** [Sarunas Kilius](https://projekter.aau.dk/projekter/files/535868106/Master_Thesis__1_.pdf)
 4. [React UI Demo](https://lttcmd.site/build/index.html) **Credit:** [lttcmd](https://lttcmd.site/)
----
+5. [Synth Playground](https://gth80g.csb.app/) **Credit:** [Cody Carlton](https://codesandbox.io/u/cody-carlton)
+6. [kvlutu](https://kvlutu.csb.app/)
+7. [Granulator.maxpat (v1.1.0)](https://pm1unr.csb.app/) **Credit:** [Sarunas Kilius](https://codesandbox.io/u/sharunas11)
 
+---
 
 ### Screenshots
 
----
 
 ![Figma design placeholder]()
 
@@ -98,6 +100,10 @@ Web Audio API & AUDIOWORKLET
 
 [Using React / NextJs to pull in a patch](https://www.saintsalo.com/rnbo)
 
+[Bela Forums: RNBO - Cycling 74 Max -> C++](https://forum.bela.io/d/2632-rnbo-cycling-74-max-c/6)
+
+[Zeal.co - Making a plugin with RNBO](https://zeal.co/notebook/rnbo-plugins/)
+
 [Saint Salo Rnbo Device for Next.js/tsx GITHUB Repo](https://github.com/saintsalo/saintsalo-site/blob/main/web/app/rnbo/page.tsx)
 
 **Including the RNBO patch using JavaScript:**
@@ -132,6 +138,9 @@ the AudioContext will do the same to the audio output
 [Philip Meyer github patches](https://github.com/pdmeyer/philip-meyer-max-tutorials/blob/main/patchers/sampler/sample-switching.maxpat)
 
 [CodePen of the abl LFO Animation w/html-css-js](https://codepen.io/team/cycling74/pen/BaxOzmL/320ebc13dfe1a5a20484858f2266e90a)
+
+[CodeSandbox @rnbo/js Examples and Templates](https://codesandbox.io/examples/package/@rnbo/js)
+
 
 **Knobs/Fader Icons:** 
 - [Vue round Slider:](https://www.npmjs.com/package/vue-round-slider)
