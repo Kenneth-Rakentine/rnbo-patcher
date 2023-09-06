@@ -9,8 +9,9 @@ export default function AuthPage({setUser}) {
     <main className={styles.AuthPage}>
       <div>
       
-        <h1 className='authHead'><img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/untested.png" className='authIcon'alt="authIcon"/>Auth Page</h1>
-        <button
+        {/* <h1 className='authHead'><img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/untested.png" className='authIcon'alt="authIcon"/>Auth Page</h1> */}
+        <img src="https://i.ibb.co/vBxzSkP/ideogram-8.jpg" className='authpageLogo' alt='logo img'></img>
+        <button className='authBtn'
           onClick={() => {
             setShowLogin(!showLogin);
           }}

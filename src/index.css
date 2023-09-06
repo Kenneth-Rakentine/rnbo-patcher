@@ -262,7 +262,21 @@ box-shadow: -3px 2px 0px rgb(91, 91, 114); */
   justify-content:start;
 }
 
-.authHead{
+/* .authHead{
   display:column;
 
+} */
+
+.authpageLogo{
+  width:40%;
+  display:flex;
+  margin-left:30%;
+  /* justify-content:start;
+  align-self:start; */
+}
+
+.authBtn{
+  background-color:white;
+  margin-left:29.5%;
+  width:41%;
 }

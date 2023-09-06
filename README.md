@@ -28,6 +28,7 @@ To solve the problem of integrating Javascript Exported RNBO(for Max Msp) to REA
 1. [RNBO Granular Web Synth](https://sllewmas.github.io/rnbo/) - **Credit:** [Sam Wells](https://sllewm.as/)
 2. [Multi-Touch Granular Sampler](http://zya.github.io/granular/) **Credit:** [ZYA](https://github.com/zya/granular)
 3. [RNBO Web Granulator](https://codesandbox.io/embed/rec-3-ui-fhczyi?fontsize=14&hidenavigation=1&theme=dark) **Credit:** [Sarunas Kilius](https://projekter.aau.dk/projekter/files/535868106/Master_Thesis__1_.pdf)
+4. [React UI Demo](https://lttcmd.site/build/index.html) **Credit:** [lttcmd](https://lttcmd.site/)
 ---
 
 
@@ -91,7 +92,13 @@ Web Audio API & AUDIOWORKLET
 [Learning Synths w/RNBO](https://rnbo.cycling74.com/explore/learning-synths-and-rnbo)
 *alternatives: Gibber, PureData & WebPD*
 
+[Exploring RNBO By Ottavio Sostero](https://www.ottaviosc.uk/blog/jhbmir5jraacik9yqyt8j6wzqwej8p)
+
 [Processing.js](https://processing.org/tutorials/gettingstarted)
+
+[Using React / NextJs to pull in a patch](https://www.saintsalo.com/rnbo)
+
+[Saint Salo Rnbo Device for Next.js/tsx GITHUB Repo](https://github.com/saintsalo/saintsalo-site/blob/main/web/app/rnbo/page.tsx)
 
 **Including the RNBO patch using JavaScript:**
 In order to actually include the audio processing, a JavaScript (JS) application was
@@ -121,6 +128,8 @@ the AudioContext will do the same to the audio output
 [RNBO EXPORT TUTORIAL](https://www.youtube.com/watch?v=Q3S3BD1LnCY&ab_channel=MelodyLoveless)
 
 [Export Js Code Tutorial for RNBO](https://www.youtube.com/watch?v=1HVT1hsuKsA&ab_channel=lttcmd)
+
+[Philip Meyer github patches](https://github.com/pdmeyer/philip-meyer-max-tutorials/blob/main/patchers/sampler/sample-switching.maxpat)
 
 [CodePen of the abl LFO Animation w/html-css-js](https://codepen.io/team/cycling74/pen/BaxOzmL/320ebc13dfe1a5a20484858f2266e90a)
 
@@ -172,7 +181,7 @@ the AudioContext will do the same to the audio output
 
 ---
 
-###### Unsolved/To Be Accomplished:
+###### Unsolved/To Be Accomplished Roadmap:
 
 - [ ] Create more unqiue working Rnbo Patches to be expoted and saved to the patch catalogue. The main project idea being a granular sampler including the following PARAMS: 
  - LFO for scrub playback start position, 
