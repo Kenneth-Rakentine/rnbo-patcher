@@ -35,10 +35,11 @@ app.use('/api/items', ensureLoggedIn, require('./routes/api/items'));
 app.use('/api/orders', ensureLoggedIn, require('./routes/api/orders'));
 
 
-// TESTING FOR GET
-app.get('/TESTING/:userId/websites', async (req, res) => {
+//GET[fetched from Collections.jsx]
+app.get('/api/users/:userId/websites', async (req, res) => {
   try {
-    const { userId } = req.params; // get id
+    //get id
+    const { userId } = req.params; 
     const allPatches = await Website.find({}) 
     res.setHeader('Content-Type', 'application/json'); 
     res.status(200).send(allPatches)

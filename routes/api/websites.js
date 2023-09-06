@@ -1,20 +1,35 @@
 const express = require('express');
 const router = express.Router();
-const Website = require('../../models/websiteSchema');  
+const Website = require('../../models/websiteSchema');
 
-//creat new patch(website)
+// Retrieve patches by user ID
+router.get('/:userId/websites', async (req, res) => {
+  try {
+    const { userId } = req.params;
+
+    // Fetch patches for the specified user
+    const patches = await Website.find({ userId });
+
+    res.status(200).json(patches);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ success: false, message: 'Error retrieving patches' });
+  }
+});
+
+// Create a new patch (website)
 router.post('/', async (req, res) => {
   try {
     const { userId, url, title } = req.body;
 
-    //create new website document
+    // Create a new website document
     const website = new Website({
       userId,
       url,
       title,
     });
 
-    //save website document to database
+    // Save website document to the database
     const savedWebsite = await website.save();
 
     res.status(201).json(savedWebsite);
@@ -24,13 +39,13 @@ router.post('/', async (req, res) => {
   }
 });
 
-//update patch title
+// Update patch title
 router.put('/:websiteId', async (req, res) => {
   try {
     const websiteId = req.params.websiteId;
     const { title } = req.body;
 
-    //update patch title
+    // Update patch title
     const updatedWebsite = await Website.findByIdAndUpdate(
       websiteId,
       { title },
@@ -44,12 +59,12 @@ router.put('/:websiteId', async (req, res) => {
   }
 });
 
-//delete patch
+// Delete patch
 router.delete('/:websiteId', async (req, res) => {
   try {
     const websiteId = req.params.websiteId;
 
-    //remove website document fromthe database
+    // Remove website document from the database
     await Website.findByIdAndRemove(websiteId);
 
     res.status(204).end();

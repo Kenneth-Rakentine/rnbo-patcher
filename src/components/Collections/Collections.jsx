@@ -22,13 +22,10 @@ class Collections extends Component {
       // Fetch collections
       const collectionsResponse = await axios.get(`/api/collections/${userId}`);
       const collections = collectionsResponse.data;
-      console.log('COLLECTIONS',collections) // is an array
 
-      // Fetch patches
-      const patchesResponse = await axios.get(`/TESTING/${userId}/websites`);  // no path to catch this THIS WAS MAIN ISSUE
+      // Fetch patches using the updated GET route in server.js
+      const patchesResponse = await axios.get(`/api/users/${userId}/websites`);
       const patches = patchesResponse.data;
-      console.log('PATCHES',patches) // patch response is weird
-
 
       // Log patchesResponse.data to inspect what data is being received
       console.log('Patches Response Data:', patchesResponse.data);
@@ -47,38 +44,28 @@ class Collections extends Component {
         <h1>User Patch Collections</h1>
         <div>
           <h2>Collections</h2>
-          {
-          // Array.isArray(patches) && patches.length > 0 ?
-            collections ? 
-            (
+          {Array.isArray(patches) && patches.length > 0 ? (
             <ul>
               {collections.map((collection) => (
-                (<li key={collection._id}>
+                <li key={collection._id}>
                   <h3>Collection Name: {collection.name}</h3>
                   <ul>
-                    {patches
-                      .filter((patch) => patch.collectionId === collection._id)
-                      .map((patch) => (
-                        <li key={patch._id}>
-                          {/* Render patch information here */}
-                          <p>Title: {patch.title}</p>
-                          <p>URL: {patch.url}</p>
-                        </li>
+                  {patches
+                .filter((patch) => patch.collectionId === collection._id)
+                .map((patch) => (
+                <li key={patch._id}>
+                    <p>Title: {patch.title}</p>
+                    <p>URL: {patch.url}</p>
+                    <button onClick={() => this.handleDeletePatch(patch._id)}>Delete</button>
+                </li>
                       ))}
                   </ul>
-                </li>)
+                </li>
               ))}
             </ul>
           ) : (
-            <p>No patches to display.</p>
+            <p>No collections found.</p>
           )}
-
-{/* TESTINGGGGGGG */}
-          {/* {
-              collections.map((collection) => {
-                return <p>test</p>
-              })
-          } */}
         </div>
       </div>
     );
