@@ -8,7 +8,6 @@ import CollectionsPage from "./pages/CollectionsPage/CollectionsPage";
 import OrderHistoryPage from "./pages/OrderHistoryPage/OrderHistoryPage";
 // components
 import NavBar from "./components/NavBar/NavBar";
-// css
 import styles from './App.module.css';
 import SearchPage from "./pages/SearchPage/SearchPage";
 import EditPatch from "./components/EditPatch/EditPatch";
@@ -17,6 +16,8 @@ function App() {
   // array destructuring
   const [user, setUser] = useState(getUser());
   const [collectionId, setCollectionId] = useState(null);
+  const [openedURL, setOpenedURL] = useState(null);
+  const [openedTitle, setOpenedTitle] = useState(null);
 
   return (
     <main className={styles.App}>
@@ -28,10 +29,20 @@ function App() {
 
             <Route path="/patches" element={<CollectionsPage userId={user._id} />} />
 
-            <Route path="/edit/:patchId" render={({ match }) => (
-          <EditPatch patchId={match.params.patchId} collectionId={collectionId}  />
-           )}
-           />  
+            <Route
+  path="/edit/:patchId"
+  element={({ match }) => (
+    <EditPatch
+      patchId={match.params.patchId}
+      collectionId={collectionId}
+      openedURL={openedURL}
+      openedTitle={openedTitle}
+      setOpenedURL={setOpenedURL}
+      setOpenedTitle={setOpenedTitle}
+    />
+  )}
+/>
+ 
 
             {/* redirect to /orders/new if path in address bar hasn't matched a <Route> above */}
 

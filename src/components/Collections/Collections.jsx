@@ -10,6 +10,10 @@ class Collections extends Component {
       editingPatch: null,
       editedPatchTitle: '',
       editedPatchURL: '',
+      selectedPatchId: null,
+      selectedCollectionId: null,
+      openedURL: '',
+      openedTitle: '',
     };
   }
 
@@ -34,6 +38,13 @@ class Collections extends Component {
     } catch (error) {
       console.error('Error fetching user data:', error);
     }
+  };
+  handleOpen = (patch) => {
+    this.setState({
+      openedURL: patch.url,
+       //set default title if none exists
+      openedTitle: patch.title || 'Untitled',
+    });
   };
   
   handleEditPatch = (patch) => {
@@ -88,61 +99,62 @@ class Collections extends Component {
   };
 
   render() {
-    const { collections, patches, editingPatch, editedPatchTitle, editedPatchURL } = this.state;
+    const { collections, patches, editingPatch, editedPatchTitle, editedPatchURL, openedURL, openedTitle, } = this.state;
     const { userId, collectionId } = this.props;
 
     return (
-      <div>
-        <h1>User Patch Collections</h1>
         <div>
-          {/* <h2>Collections</h2> */}
-          {Array.isArray(patches) && patches.length > 0 ? (
-            <ul>
-              {collections.map((collection) => (
-                <li key={collection._id}>
-                  <h3>Collection: {collection.name}</h3>
-                  <ul>
-                    {patches
-                      .filter((patch) => patch.collectionId === (collectionId || collection._id))
-                      .map((patch) => (
-                        <li key={patch._id}>
-                          {editingPatch === patch ? (
-                            <form onSubmit={(e) => this.handleUpdatePatch(e, patch._id)}>
-                              <input
-                                type="text"
-                                placeholder="New Title"
-                                value={editedPatchTitle}
-                                onChange={this.handleEditedPatchTitleChange}
-                              />
-                              <input
-                                type="text"
-                                placeholder="New URL"
-                                value={editedPatchURL}
-                                onChange={this.handleEditedPatchURLChange}
-                              />
-                              <button type="submit">Save</button>
-                            </form>
-                          ) : (
-                            <>
-                              <p>Patch: {patch.title}</p>
-                              <p>URL: {patch.url}</p>
-                              <button onClick={() => this.handleEditPatch(patch)}>Edit</button>
-                              <button onClick={() => this.handleDeletePatch(patch._id)}>Delete</button>
-                            </>
-                          )}
-                        </li>
-                      ))}
-                  </ul>
-                </li>
-              ))}
-            </ul>
-          ) : (
-            <p>No patches to display.</p>
-          )}
+          <h1>User Patch Collections</h1>
+          <div>
+            {/* <h2>Collections</h2> */}
+            {Array.isArray(patches) && patches.length > 0 ? (
+              <ul>
+                {collections.map((collection) => (
+                  <li key={collection._id}>
+                    <h3>Collection: {collection.name}</h3>
+                    <ul>
+                      {patches
+                        .filter((patch) => patch.collectionId === (collectionId || collection._id))
+                        .map((patch) => (
+                          <li key={patch._id}>
+                            {editingPatch === patch ? (
+                              <form onSubmit={(e) => this.handleUpdatePatch(e, patch._id)}>
+                                <input
+                                  type="text"
+                                  placeholder="New Title"
+                                  value={editedPatchTitle}
+                                  onChange={this.handleEditedPatchTitleChange}
+                                />
+                                <input
+                                  type="text"
+                                  placeholder="New URL"
+                                  value={editedPatchURL} 
+                                  onChange={this.handleEditedPatchURLChange}
+                                />
+                                <button type="submit">Save</button>
+                              </form>
+                            ) : (
+                              <>
+                                <p>Patch: {patch.title}</p>
+                                <p>URL: {patch.url}</p>
+                                <button onClick={this.handleOpen(patch)}>Open</button>
+                                <button onClick={() => this.handleEditPatch(patch)}>Edit</button>
+                                <button onClick={() => this.handleDeletePatch(patch._id)}>Delete</button>
+                              </>
+                            )}
+                          </li>
+                        ))}
+                    </ul>
+                  </li>
+                ))}
+              </ul>
+            ) : (
+              <p>No patches to display.</p>
+            )}
+          </div>
         </div>
-      </div>
-    );
+      );
+    }
   }
-}
-
+  
 export default Collections;
