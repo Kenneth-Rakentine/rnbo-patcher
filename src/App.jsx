@@ -11,10 +11,12 @@ import NavBar from "./components/NavBar/NavBar";
 // css
 import styles from './App.module.css';
 import SearchPage from "./pages/SearchPage/SearchPage";
+import EditPatch from "./components/EditPatch/EditPatch";
 
 function App() {
   // array destructuring
   const [user, setUser] = useState(getUser());
+  const [collectionId, setCollectionId] = useState(null);
 
   return (
     <main className={styles.App}>
@@ -25,6 +27,11 @@ function App() {
             <Route path="/patches/new" element={<SearchPage userId={user._id} />} />
 
             <Route path="/patches" element={<CollectionsPage userId={user._id} />} />
+
+            <Route path="/edit/:patchId" render={({ match }) => (
+          <EditPatch patchId={match.params.patchId} collectionId={collectionId}  />
+           )}
+           />  
 
             {/* redirect to /orders/new if path in address bar hasn't matched a <Route> above */}
 

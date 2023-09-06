@@ -30,7 +30,7 @@ class CollectionsPage extends Component {
 
     return (
       <div>
-        <h1>Collections Page</h1>
+        {/* <h1>Collections Page</h1> */}
         <Collections items={collections} isCollection={true}  userId={userId}  />
       </div>
     );

@@ -23,11 +23,11 @@ class WebFrame extends Component {
 
   handleSave = async (event) => {
     event.preventDefault();
-    const { userId } = this.props;
+    const { userId, onCollectionIdChange } = this.props;
     const { url, title, collectionName } = this.state;
 
     try {
-      // Check whether collection already exists
+      //check whether collection already exists
       const collectionResponse = await axios.get(`/api/collections/byName/${collectionName}`);
       let collectionId;
 
@@ -45,11 +45,14 @@ class WebFrame extends Component {
         userId,
         url,
         title,
-        collectionName, // Send the collectionName field
+        collectionName,
       };
 
       await axios.post(`/api/users/${userId}/websites`, newWebsite);
       console.log('Website state saved successfully');
+
+      //pass collectionId to the parent component
+      onCollectionIdChange(collectionId);
     } catch (error) {
       console.error('Error saving website state:', error);
     }
@@ -109,4 +112,3 @@ class WebFrame extends Component {
 }
 
 export default WebFrame;
-

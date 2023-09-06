@@ -51,6 +51,23 @@ app.get('/api/users/:userId/websites', async (req, res) => {
   // res.send('testing')
 })
 
+
+// Delete patch by ID
+app.delete('/api/websites/:patchId', async (req, res) => {
+  const { patchId } = req.params;
+
+  try {
+    await Website.findByIdAndRemove(patchId);
+
+    // Respond with success
+    res.status(204).end();
+  } catch (error) {
+    console.error('Error deleting patch:', error);
+    res.status(500).json({ success: false, message: 'Error deleting patch' });
+  }
+});
+
+
 // Patches route
 app.post('/api/users/:userId/websites', async (req, res) => {
   const { userId } = req.params;
