@@ -43,6 +43,7 @@ To solve the problem of integrating Javascript Exported RNBO(for Max Msp) to REA
 
 ![Early Screenshot](https://i.ibb.co/YbYkMXb/rnbo-patcher-screenshot-1.png)
 
+![Second Screenshot](https://i.ibb.co/9n35P8w/screenshot-2.png)
 
 ---
 ### Assignment:
