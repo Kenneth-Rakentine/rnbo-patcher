@@ -242,6 +242,11 @@ One of the following features instead:
 (Moderate) - Include an admin interface w/features.
 (Hard) - Utilize multi-user, real-time communications (difficult and time consuming)
 
+- authentication for user login must be working and demonstrated during presentation
+
+
+to supplement: look up "mongoose hooks"
+
 ........
 
 ---
@@ -249,11 +254,10 @@ One of the following features instead:
 
 **Wireframe/Comment the design and structure of the app first, then start the code**
 
-- authentication for user login must be working and demonstrated during presentation
 
-socket.io
+[Socket.io](https://socket.io/)
 
-[trello:](https://trello.com/b/ErKkj91p/mod-3-project)
+[Trello](https://trello.com/b/ErKkj91p/mod-3-project)
 
 [DBDiagram](https://dbdiagram.io/home)
 
@@ -267,9 +271,8 @@ socket.io
 [Swagger Readme](https://swagger.io/docs/open-source-tools/swagger-codegen/)
 
 
-to supplement: look up "mongoose hooks"
-
 ![Small Logo](https://i.ibb.co/wNhBf16/ideogram-8.jpg)
+
 ---
 ### Mod 3: A MERN Stack Application & TribleByte:
 
