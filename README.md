@@ -271,8 +271,6 @@ to supplement: look up "mongoose hooks"
 [Swagger Readme](https://swagger.io/docs/open-source-tools/swagger-codegen/)
 
 
-![Small Logo](https://i.ibb.co/wNhBf16/ideogram-8.jpg)
-
 ---
 ### Mod 3: A MERN Stack Application & TribleByte:
 
