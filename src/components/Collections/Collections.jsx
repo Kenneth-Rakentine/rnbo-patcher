@@ -118,12 +118,13 @@ class Collections extends Component {
 
     return (
       <div>
-        <h1>User Patch Collections</h1>
+        <h1>Patch Collections</h1>
         <div>
           {Array.isArray(patches) && patches.length > 0 ? (
             <ul>
               {collections.map((collection) => (
                 <li key={collection._id}>
+                    <div className="collection-tab">
                   <h3>Collection: {collection.name}</h3>
                   <ul>
                     {patches
@@ -150,14 +151,15 @@ class Collections extends Component {
                             <>
                               <p>Patch: {patch.title}</p>
                               <p>URL: {patch.url}</p>
-                              <button onClick={() => this.handleOpen(patch)}>Open</button>
-                              <button onClick={() => this.handleEditPatch(patch)}>Edit</button>
-                              <button onClick={() => this.handleDeletePatch(patch._id)}>Delete</button>
+                              <button className='openBtn' onClick={() => this.handleOpen(patch)}>Open</button>
+                              <button className='editBtn'  onClick={() => this.handleEditPatch(patch)}>Edit</button>
+                              <button className='deleteBtn'  onClick={() => this.handleDeletePatch(patch._id)}>Delete</button>
                             </>
                           )}
                         </li>
                       ))}
                   </ul>
+                  </div>
                 </li>
               ))}
             </ul>
