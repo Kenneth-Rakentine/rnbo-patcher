@@ -9,7 +9,7 @@ https://rnbo-patcher.onrender.com
 
 ---
 ## Diagram
-![Draw.io](https://i.ibb.co/gdLDPjy/Rnbo-Patcher-DRAWIO-Diagram.png)
+![Draw.io](https://i.ibb.co/KyqzdTg/Rnbo-Patcher-DRAWIO-Diagram-TWO.png)
 
 ## Trello Board
 ![Mod 3 Project](https://i.ibb.co/gdjt14J/Trello-Board-Screenshot.png)
@@ -81,6 +81,8 @@ CRUD:
 [@rnbo/js](https://socket.dev/npm/package/@rnbo/js) 
 ```npm install @rnbo/js```
 *JavaScript runtime for using exported RNBO Patchers in a Web Browser*
+
+[Spline 3d](https://spline.design/)```@splinetool/react-spline```
 
 [RNBO Javascript API reference](https://rnbo.cycling74.com/js)
 
@@ -168,6 +170,7 @@ the AudioContext will do the same to the audio output
 -Node.js
 -MongoDB
 -Mongoose
+-Spline
 />
 ```
 #### Credits:
@@ -177,6 +180,7 @@ the AudioContext will do the same to the audio output
 - [Trello](https://trello.com/): Workspace Board
 - [Cycling '74](https://rnbo.cycling74.com/learn/welcome-to-rnbo)
 - [Icons8](https://icons8.com/): Icon PNGs
+- [Spline 3d Objects](https://app.spline.design/file/9ade1277-e07a-4527-8ef9-f7ea6a91669c)
 - [Realtime Colors](https://realtimecolors.com/): Visualizing & Choosing Color Palette for All Design Elements
 - [Cycling '74 Github](https://github.com/Cycling74/rnbo.example.webpage): Rnbo Example Webpage Template for JS
 

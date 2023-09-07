@@ -2,6 +2,9 @@ import SignUpForm from '../../components/SignUpForm/SignUpForm';
 import LoginForm from '../../components/LoginForm/LoginForm';
 import { useState } from 'react';
 import styles from './AuthPage.module.css';
+import Spline from '@splinetool/react-spline';
+
+
 
 export default function AuthPage({setUser}) {
   const [showLogin, setShowLogin] = useState(true);
@@ -20,6 +23,7 @@ export default function AuthPage({setUser}) {
         </button>
       </div>
       {showLogin ? <LoginForm setUser={setUser} /> : <SignUpForm  setUser={setUser}/>}
+      <Spline scene="https://prod.spline.design/dMFsP6-rkLCVYCwa/scene.splinecode" />
     </main>
   );
 }
