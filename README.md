@@ -64,9 +64,9 @@ DUE: september 7th
 
 ---
 
-*Create a patch librarian/management sysntem and audio production enviornment for Rnbo (for max-msp) users in the browser 
+*Create a patch librarian/management system and audio production enviornment for Rnbo (for max-msp) users in the browser 
 
-*the goal is to give the user a tool in which they can import their pacthes to their own library of patch collections, work on the patch within the web environment to manipulate and create audio, and save, edit, & curate their progress*
+*the goal is to give the user a tool in which they can import their pacthes to their own library of patch collections, work on the patch within the web environment to manipulate and create audio & save, edit, & curate their progress*
 
 
 CRUD:
