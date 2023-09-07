@@ -257,8 +257,8 @@ socket.io
 
 [StableDiffusion:](https://stablediffusionweb.com/#demo)
 
-[Figma](https://www.youtube.com/watch?v=_A_Jpr9HkGA&ab_channel=CJGammon) [AI03: Build a Website with Midjourney, Figma & ChatGPT]
-*ex. Midjourney/StableDiffusion prompt: (/imagine: ui/ux interface design side by side Behance Dribble, beautiful colorful creative app marketplace)*
+[Figma](https://www.youtube.com/watch?v=_A_Jpr9HkGA&ab_channel=CJGammon) [AI03: Build a Website with Midjourney & Figma]
+
 
 [Swagger Readme](https://swagger.io/docs/open-source-tools/swagger-codegen/)
 
