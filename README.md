@@ -272,8 +272,6 @@ to supplement: look up "mongoose hooks"
 
 [Socket.io](https://socket.io/)
 
-[Swagger Readme](https://swagger.io/docs/open-source-tools/swagger-codegen/)
-
 
 ---
 ### Mod 3: A MERN Stack Application & TribleByte:
