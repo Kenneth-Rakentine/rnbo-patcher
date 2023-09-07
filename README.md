@@ -11,6 +11,9 @@ https://rnbo-patcher.onrender.com
 ## Diagram
 ![Draw.io](https://i.ibb.co/gdLDPjy/Rnbo-Patcher-DRAWIO-Diagram.png)
 
+## Trello Board
+![Mod 3 Project](https://i.ibb.co/gdjt14J/Trello-Board-Screenshot.png)
+
 ---
 # Concept
 To solve the problem of integrating Javascript Exported RNBO(for Max Msp) to REACT, this web application allows a user to externally import their javascript rnbo project to their browser and provides them a single library in which to save the state of their imported patches to a collection which can subsequently be edited, deleted, & re-opened for further exploration 
@@ -168,6 +171,7 @@ the AudioContext will do the same to the audio output
 />
 ```
 #### Credits:
+- [Trello Board](https://trello.com/invite/b/ErKkj91p/ATTI276dffaac2774f9400eff6fbe187aaa7C7ACA64B/mod-3-project)
 - [Ideogram AI](https://ideogram.ai/): image generation for logo
 - [Draw.io](https://app.diagrams.net/): Diagram
 - [Trello](https://trello.com/): Workspace Board
@@ -261,6 +265,7 @@ socket.io
 
 to supplement: look up "mongoose hooks"
 
+![Small Logo](https://i.ibb.co/wNhBf16/ideogram-8.jpg)
 ---
 ### Mod 3: A MERN Stack Application & TribleByte:
 
