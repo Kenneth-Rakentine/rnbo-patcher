@@ -22,16 +22,13 @@ class Collections extends Component {
     this.fetchUserData();
   }
 
-  // Fetch user collections and patches
   fetchUserData = async () => {
     try {
       const { userId } = this.props;
 
-      // Fetch collections
       const collectionsResponse = await axios.get(`/api/collections/${userId}`);
       const collections = collectionsResponse.data;
 
-      // Fetch patches
       const patchesResponse = await axios.get(`/api/users/${userId}/websites`);
       const patches = patchesResponse.data;
 
@@ -42,14 +39,10 @@ class Collections extends Component {
   };
 
   handleOpen = (patch) => {
-    // Set the opened URL in the state
     this.setState({
       openedURL: patch.url,
-      // Set default title if none exists
       openedTitle: patch.title || 'Untitled',
     });
-
-    // Open the URL in a new tab or window
     window.open(patch.url, '_blank');
   };
 
@@ -63,16 +56,14 @@ class Collections extends Component {
 
   handleDeletePatch = async (patchId) => {
     try {
-      // Send DELETE request to the server to delete patch by id
       await axios.delete(`/api/websites/${patchId}`);
-      // Refresh data after deletion
       this.fetchUserData();
     } catch (error) {
       console.error('Error deleting patch:', error);
     }
   };
 
-  // Create event handlers for edit form fields
+ 
   handleEditedPatchTitleChange = (event) => {
     this.setState({ editedPatchTitle: event.target.value });
   };
@@ -81,17 +72,14 @@ class Collections extends Component {
     this.setState({ editedPatchURL: event.target.value });
   };
 
-  // Create event handler for form submission
   handleUpdatePatch = async (e, patchId) => {
     e.preventDefault();
 
     const { editedPatchTitle, editedPatchURL } = this.state;
 
     try {
-      // Send PUT request to update the patch data by id
+      
       await axios.put(`/api/websites/${patchId}`, { title: editedPatchTitle, url: editedPatchURL });
-
-      // Clear the editing state and refresh the data
       this.setState({
         editingPatch: null,
         editedPatchTitle: '',

@@ -5,15 +5,14 @@ import { getUser } from "./utilities/users-service";
 import AuthPage from "./pages/AuthPage/AuthPage";
 import CollectionsPage from "./pages/CollectionsPage/CollectionsPage"; 
 // import NewOrderPage from "./pages/NewOrderPage/NewOrderPage";
-import OrderHistoryPage from "./pages/OrderHistoryPage/OrderHistoryPage";
-// components
+// import OrderHistoryPage from "./pages/OrderHistoryPage/OrderHistoryPage";
+// // components
 import NavBar from "./components/NavBar/NavBar";
 import styles from './App.module.css';
 import SearchPage from "./pages/SearchPage/SearchPage";
 import EditPatch from "./components/EditPatch/EditPatch";
 
 function App() {
-  // array destructuring
   const [user, setUser] = useState(getUser());
   const [collectionId, setCollectionId] = useState(null);
   const [openedURL, setOpenedURL] = useState(null);

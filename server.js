@@ -38,17 +38,14 @@ app.use('/api/orders', ensureLoggedIn, require('./routes/api/orders'));
 //GET[fetched from Collections.jsx]
 app.get('/api/users/:userId/websites', async (req, res) => {
   try {
-    //get id
     const { userId } = req.params; 
     const allPatches = await Website.find({}) 
     res.setHeader('Content-Type', 'application/json'); 
     res.status(200).send(allPatches)
-    
   } catch (error) {
     console.error(error)
     res.status(500).send(error)
   }
-  // res.send('testing')
 })
 
 
@@ -68,7 +65,7 @@ app.delete('/api/websites/:patchId', async (req, res) => {
 });
 
 
-// Patches route
+//patches route
 app.post('/api/users/:userId/websites', async (req, res) => {
   const { userId } = req.params;
   const { url, title, collectionName } = req.body;
@@ -80,12 +77,9 @@ app.post('/api/users/:userId/websites', async (req, res) => {
       console.log(`User with ID ${userId} not found.`);
       return res.status(404).json({ success: false, message: 'User not found' });
     }
-
-    // Find or create the collection with the given name
     let collection = await Collection.findOne({ name: collectionName, userId: user._id });
 
     if (!collection) {
-      // If the collection doesn't exist, create it
       collection = new Collection({ name: collectionName, userId: user._id });
       await collection.save();
     }

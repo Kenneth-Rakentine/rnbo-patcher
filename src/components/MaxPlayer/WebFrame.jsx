@@ -13,7 +13,6 @@ class WebFrame extends Component {
   }
 
   componentDidMount() {
-    // Pre-fill the iframe and title if openedURL and openedTitle are provided
     if (this.props.openedURL && this.props.openedTitle) {
       this.setState({
         url: this.props.openedURL,
@@ -37,7 +36,6 @@ class WebFrame extends Component {
     const { url, title, collectionName } = this.state;
 
     try {
-      // Check whether the collection already exists
       const collectionResponse = await axios.get(`/api/collections/byName/${collectionName}`);
       let collectionId;
 
@@ -61,7 +59,6 @@ class WebFrame extends Component {
       await axios.post(`/api/users/${userId}/websites`, newWebsite);
       console.log('Website state saved successfully');
 
-      // Pass collectionId to the parent component
       onCollectionIdChange(collectionId);
     } catch (error) {
       console.error('Error saving website state:', error);

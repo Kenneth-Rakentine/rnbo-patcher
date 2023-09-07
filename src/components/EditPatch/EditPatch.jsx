@@ -9,7 +9,7 @@ function EditPatch(props) {
   const [url, setUrl] = useState('');
 
   useEffect(() => {
-    if (patchId) { // Check if patchId is available
+    if (patchId) { 
       const fetchPatchData = async () => {
         try {
           const patchResponse = await axios.get(`/api/websites/${patchId}`);
@@ -36,17 +36,15 @@ function EditPatch(props) {
 
   const handleSave = async () => {
     try {
-      // Send a PUT request to update the patch data by ID
+      
       await axios.put(`/api/websites/${patchId}`, { title, url });
-      // Redirect back to the patch view
       props.history.push(`/collections/${collectionId}/patches/${patchId}`);
     } catch (error) {
       console.error('Error updating patch:', error);
     }
   };
 
-  const handleOpen = () => { // Declare handleOpen as a constant function
-    // Assuming you want to open the URL in a new window/tab
+  const handleOpen = () => { 
     window.open(url, '_blank');
   };
 

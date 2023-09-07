@@ -6,17 +6,15 @@ class CollectionsPage extends Component {
   constructor() {
     super();
     this.state = {
-      collections: [], // Initialize an empty array to store collections
+      collections: [], 
     };
   }
 
   componentDidMount() {
-    // Fetch collections data from the server based on the userId
     const { userId } = this.props;
 
     axios.get(`/api/collections/${userId}`)
       .then((response) => {
-        // Update the state with the fetched collections
         this.setState({ collections: response.data });
       })
       .catch((error) => {
