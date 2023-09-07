@@ -18,6 +18,8 @@ https://rnbo-patcher.onrender.com
 # Concept
 To solve the problem of integrating Javascript Exported RNBO(for Max Msp) to REACT, this web application allows a user to externally import their javascript rnbo project to their browser and provides them a single library in which to save the state of their imported patches to a collection which can subsequently be edited, deleted, & re-opened for further exploration 
 
+Max MSP is a visual programming language for music and multimedia. Rnbo is a library and toolchain that can take Max patches, export them as portable code, and directly compile that code to targets like a VST, a Max External, or a Raspberry Pi.
+
 ---
 ### Instructions
 
@@ -78,6 +80,8 @@ CRUD:
 ### Resources
 
 [RNBO & JS TUTORIAL](https://www.youtube.com/watch?v=fzfGYsIsAKg&ab_channel=lttcmd) *
+
+[Max Msp Wiki](https://en.wikipedia.org/wiki/Max_(software))
 
 [@rnbo/js](https://socket.dev/npm/package/@rnbo/js) 
 ```npm install @rnbo/js```
