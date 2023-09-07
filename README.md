@@ -72,9 +72,11 @@ CRUD:
 - Edit patch & patch title
 - Delete patchproject
 
-
+---
 
 <br>
+
+### Resources
 
 [RNBO & JS TUTORIAL](https://www.youtube.com/watch?v=fzfGYsIsAKg&ab_channel=lttcmd) *
 
