@@ -13,7 +13,7 @@ https://rnbo-patcher.onrender.com
 
 ---
 # Concept
-To solve the problem of integrating Javascript Exported RNBO(for Max Msp) to REACT, this web application allows a user to externally import their javascript rnbo project to their browser, save the state of the imported patch to a collection, and edit/delete/re-open the saved patches for further exploration afterward
+To solve the problem of integrating Javascript Exported RNBO(for Max Msp) to REACT, this web application allows a user to externally import their javascript rnbo project to their browser and provides them a single library in which to save the state of their imported patches to a collection which can subsequently be edited, deleted, & re-opened for further exploration 
 
 ---
 ### Instructions

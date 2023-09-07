@@ -1,30 +1,30 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import { useParams, useLocation } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
 function EditPatch(props) {
-  const { patchId, collectionId } = useParams(); // Get patchId and collectionId from route params
-  const location = useLocation();
-
+  const { patchId, collectionId } = useParams();
+  
   const [title, setTitle] = useState('');
   const [url, setUrl] = useState('');
 
   useEffect(() => {
-    const fetchPatchData = async () => {
-      try {
-        const patchResponse = await axios.get(`/api/websites/${patchId}`);
-        const patch = patchResponse.data;
+    if (patchId) { // Check if patchId is available
+      const fetchPatchData = async () => {
+        try {
+          const patchResponse = await axios.get(`/api/websites/${patchId}`);
+          const patch = patchResponse.data;
 
-        setTitle(patch.title);
-        setUrl(patch.url);
-      } catch (error) {
-        console.error('Error fetching patch data:', error);
-      }
-    };
+          setTitle(patch.title);
+          setUrl(patch.url);
+        } catch (error) {
+          console.error('Error fetching patch data:', error);
+        }
+      };
 
-    fetchPatchData(); // Call fetchPatchData within the useEffect callback
-
-  }, [patchId]); // Include patchId in the dependency array
+      fetchPatchData();
+    }
+  }, [patchId]);
 
   const handleInputChange = (event) => {
     if (event.target.name === 'title') {
@@ -43,6 +43,11 @@ function EditPatch(props) {
     } catch (error) {
       console.error('Error updating patch:', error);
     }
+  };
+
+  const handleOpen = () => { // Declare handleOpen as a constant function
+    // Assuming you want to open the URL in a new window/tab
+    window.open(url, '_blank');
   };
 
   return (
@@ -68,6 +73,7 @@ function EditPatch(props) {
           />
         </div>
         <button onClick={handleSave}>Save</button>
+        <button onClick={handleOpen}>Open</button>
       </form>
     </div>
   );
