@@ -252,10 +252,6 @@ to supplement: look up "mongoose hooks"
 ---
 ## TOOLS
 
-**Wireframe/Comment the design and structure of the app first, then start the code**
-
-
-[Socket.io](https://socket.io/)
 
 [Trello](https://trello.com/b/ErKkj91p/mod-3-project)
 
@@ -265,8 +261,9 @@ to supplement: look up "mongoose hooks"
 
 [StableDiffusion:](https://stablediffusionweb.com/#demo)
 
-[Figma](https://www.youtube.com/watch?v=_A_Jpr9HkGA&ab_channel=CJGammon) [AI03: Build a Website with Midjourney & Figma]
+[Figma](https://www.figma.com/) 
 
+[Socket.io](https://socket.io/)
 
 [Swagger Readme](https://swagger.io/docs/open-source-tools/swagger-codegen/)
 
