@@ -38,6 +38,15 @@ class Collections extends Component {
     }
   };
 
+  handleDeleteCollection = async (collectionId) => {
+    try {
+      await axios.delete(`/api/collections/${collectionId}`);
+      this.fetchUserData();
+    } catch (error) {
+      console.error('Error deleting collection:', error);
+    }
+  };
+
   handleOpen = (patch) => {
     this.setState({
       openedURL: patch.url,
@@ -113,7 +122,14 @@ class Collections extends Component {
               {collections.map((collection) => (
                 <li key={collection._id}>
                     <div className="collection-tab">
-                  <h3>Collection: {collection.name}</h3>
+                  <h3>Collection: {collection.name}
+                  <img
+                        src="https://img.icons8.com/wired/64/filled-trash.png"
+                        className='trashCollection'
+                        alt="Delete Collection"
+                        onClick={() => this.handleDeleteCollection(collection._id)}
+                        style={{ cursor: 'pointer' }}
+                      /></h3>
                   <ul>
                     {patches
                       .filter((patch) => patch.collectionId === (collectionId || collection._id))

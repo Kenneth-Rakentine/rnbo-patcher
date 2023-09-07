@@ -32,8 +32,10 @@ body {
 
 .App{
   text-align:center;
-  
+  /* background-color: var(--tan-4);
+  height:100%; */
 }
+
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
@@ -339,4 +341,9 @@ margin:.4%;
           box-shadow: 1.1px .4px 4px 1px #505050b7;
           margin:.4%;
           width:11%;
+          }
+
+          .trashCollection{
+            width:3%;
+            margin-left:1%;
           }
