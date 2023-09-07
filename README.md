@@ -20,6 +20,8 @@ To solve the problem of integrating Javascript Exported RNBO(for Max Msp) to REA
 
 Max MSP is a visual programming language for music and multimedia. Rnbo is a library and toolchain that can take Max patches, export them as portable code, and directly compile that code to targets like a VST, a Max External, or a Raspberry Pi.
 
+![rnbo screenshot](https://media.graphassets.com/MtaIVxpQNCDdlcgLAUFR)
+
 ---
 ### Instructions
 
