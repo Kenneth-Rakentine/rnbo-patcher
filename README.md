@@ -41,8 +41,6 @@ To solve the problem of integrating Javascript Exported RNBO(for Max Msp) to REA
 ### Screenshots
 
 
-![Figma design placeholder]()
-
 ![Early Screenshot](https://i.ibb.co/YbYkMXb/rnbo-patcher-screenshot-1.png)
 
 
